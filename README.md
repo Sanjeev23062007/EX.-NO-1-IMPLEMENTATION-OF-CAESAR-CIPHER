@@ -17,7 +17,30 @@ STEP-5: Display the cipher text obtained above.
 
 ## PROGRAM:
 
+```c
+#include <stdio.h>
+#include <string.h>
+void caesarCipher(char *text, int shift) 
+{
+ for (int i = 0; text[i]; i++) 
+ {
+ if (text[i] >= 'A' && text[i] <= 'Z')
+ text[i] = ((text[i]- 'A' + shift) % 26) + 'A';
+ 
+ }
+}
+int main() 
+{
+ char text[] = "SanjeevA";
+ caesarCipher(text, 3);
+ printf("Encrypted Message: %s\n", text);
+ caesarCipher(text,-3);
+ printf("Decrypted Message: %s\n", text);
+ return 0;
+}
+```
 ## OUTPUT:
+<img width="928" height="579" alt="image" src="https://github.com/user-attachments/assets/6fb42c16-549b-4223-8852-d858b4f0c633" />
 
 ## RESULT :
  Thus the implementation of ceasar cipher had been executed successfully.
